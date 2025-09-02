@@ -145,13 +145,30 @@ void inserirElemento()
 
 void excluirElemento()
 {
-	
+
 }
 
 void buscarElemento()
 {
+
+	int buscar;
+
+	cout << "digite o valor que deseja :";
+	cin >> buscar;
+
+	if (posicaoElemento(buscar) != NULL) {
+		cout << "valor encontrado" << endl;
+
+	}
+
+	else {
+		cout << "valor nao encontrado" << endl;
+	}
 	
-}
+
+	}
+
+
 
 
 
