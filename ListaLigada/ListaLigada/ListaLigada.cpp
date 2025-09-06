@@ -132,6 +132,12 @@ void inserirElemento()
 	{
 		primeiro = novo;
 	}
+
+	else if (posicaoElemento(novo->valor) != NULL)
+	{ 
+		cout << "O elemento já existe. Por favor não realize a insercao" << endl;
+		
+	}
 	else
 	{
 		// procura o final da lista
