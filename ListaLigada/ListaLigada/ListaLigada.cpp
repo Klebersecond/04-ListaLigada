@@ -157,12 +157,12 @@ void excluirElemento()
 	cout << "DIGITE O VALOR QUE DESEJA EXCLUIR:";
 	cin >> excluir;
 
-	NO* posicao = posicaoElemento(excluir);
+	NO* valorQueOUsuarioDigitou = posicaoElemento(excluir);
 
-	if (posicao == NULL) {
+	if (valorQueOUsuarioDigitou == NULL) {
 		cout << "ELEMENTO NAO ENCONTRADO" << endl;
 	}
-	else if (posicao == primeiro) {
+	else if (valorQueOUsuarioDigitou == primeiro) {
 
 		NO* aux = primeiro;
 
@@ -173,20 +173,22 @@ void excluirElemento()
 
 	}
 	else {
-		NO* aux = primeiro;
+		NO* atual = primeiro;
 		NO* anterior = primeiro;
 
-		while (aux != NULL) {
-			if (aux == posicao)
-				anterior->prox = aux->prox;
+		while (atual != NULL) {
+			if (atual == valorQueOUsuarioDigitou)
+				anterior->prox = atual->prox;
 
-			if (aux != primeiro)
+			if (atual != primeiro)
 				anterior = anterior->prox;
 
-			aux = aux->prox;
+			atual = atual->prox;
 		}
 
-		free(posicao);
+		free(valorQueOUsuarioDigitou);
+
+		cout << "ELEMENTO EXCLUIDO" << endl;
 	}
 }
 
